@@ -104,5 +104,5 @@ lisetPitch = function(){
 setMute = function( mute ){
     if(mute == true) gMasterGainNode.gain.value = 0;
     else gMasterGainNode.gain.value = 0.2;
-    changeSound();
+    //changeSound();
 };
