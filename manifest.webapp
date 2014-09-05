@@ -1,0 +1,13 @@
+{
+    "version"    : "0.1",
+    "name"       : "koto.min",
+    "description": "koto.min",
+    "launch_path": "/index.html",
+    "icons" : {"128" : "/rsrc/icon.png"},
+    "orientation": "portrait-primary",
+    "developer"  : {
+        "name" : "qusacave",
+        "url"  : ""
+    },
+    "installs_allowed_from": ["*"]
+}
