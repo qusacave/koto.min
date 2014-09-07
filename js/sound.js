@@ -73,9 +73,9 @@ gOscillatorNode.start(0);
 changeSound = function( pr ) {
     var start = gAudioContext.currentTime;
     gGainNode.gain.setValueAtTime(0, start);
-    gGainNode.gain.linearRampToValueAtTime(1, start + 0.05);
-    gGainNode.gain.setTargetAtTime(0.1, start + 0.05, 0.1);
-    gGainNode.gain.setTargetAtTime(0, start + 0.2, 0.5);
+    gGainNode.gain.linearRampToValueAtTime(1, start + 0.05);//A
+    gGainNode.gain.setTargetAtTime(0.1, start + 0.05, 0.1);//D1
+    gGainNode.gain.setTargetAtTime(0, start + 0.2, 0.8);//D2
     gFilterNode.frequency.setValueAtTime(10000, start);
     gFilterNode.frequency.exponentialRampToValueAtTime(500, start + 0.05);
 };
@@ -91,8 +91,8 @@ changePitch = function( key ){
     }
 };
 
-lisetPitch = function(){
-    console.log("liset");
+resetPitch = function(){
+    console.log("reset");
     gOscillatorNode.frequency.value = pitch[0];
 }
 
@@ -103,6 +103,6 @@ lisetPitch = function(){
 //------------------------------------------------------------------------------
 setMute = function( mute ){
     if(mute == true) gMasterGainNode.gain.value = 0;
-    else gMasterGainNode.gain.value = 0.2;
+    else gMasterGainNode.gain.value = 0.5;
     //changeSound();
 };

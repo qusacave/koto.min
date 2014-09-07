@@ -5,7 +5,8 @@
 //------------------------------------------------------------------------------
 onChangeProximity = function( e ) {
     //changeScreen( e.value );  //  画面を変化させる処理を呼ぶ
-    changeSound( e.value );   //  音を変化させる処理を呼ぶ
+    if(e.near)changeSound( e.value );   //  音を変化させる処理を呼ぶ
+    //console.log(e.near);
 };
 
 //  イベントハンドラを設定

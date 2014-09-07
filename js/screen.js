@@ -116,10 +116,13 @@ keys = function(){
     }
 
 //  ここからクリックしたときの処理
-    cnv.onmousedown = ( function(e){
-        var rect = e.target.getBoundingClientRect();
-        var mouseX = e.clientX - rect.left;
-        var mouseY = e.clientY - rect.top;
+    //cnv.onmousedown = function(e){
+    ontouch = function(e){
+        //var rect = e.target.getBoundingClientRect();
+        //var mouseX = e.clientX - rect.left;
+        //var mouseY = e.clientY - rect.top;
+        var mouseX = e.targetTouches[0].pageX - cnv.offsetLeft;
+        var mouseY = e.targetTouches[0].pageY - cnv.offsetTop;
         //console.log(mouseX, mouseY);
 
         for(i=0; i<nKeys; i++){
@@ -131,10 +134,16 @@ keys = function(){
                 }
             }
         }
-    } );
-    cnv.onmouseup = ( function(e){
-        lisetPitch();
-    } );
+    } ;
+    //cnv.onmouseup = function(e){
+    offtouch = function(e){
+        resetPitch();
+    };
+
+    cnv.addEventListener('touchstart', ontouch);
+    cnv.addEventListener('touchend', offtouch);
+    //cnv.addEventListener('mousedown', ontouch);
+    //cnv.addEventListener('mouseup', offtouch);
 };
 
 //  起動時と画面幅が変わったら再描画する
