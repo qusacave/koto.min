@@ -67,8 +67,8 @@ gOscillatorNode.start(0);
 
 //------------------------------------------------------------------------------
 //  近接センサーの値が変わると呼ばれる関数
-//  
-//  
+//
+//
 //------------------------------------------------------------------------------
 changeSound = function( pr ) {
     var start = gAudioContext.currentTime;
@@ -103,6 +103,6 @@ resetPitch = function(){
 //------------------------------------------------------------------------------
 setMute = function( mute ){
     if(mute == true) gMasterGainNode.gain.value = 0;
-    else gMasterGainNode.gain.value = 0.5;
+    else gMasterGainNode.gain.value = 0.6;
     //changeSound();
 };
